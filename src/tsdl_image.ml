@@ -10,7 +10,7 @@ type 'a result = 'a Sdl.result
 let error () = Error (`Msg (Sdl.get_error ()))
 
 let bool =
-  view ~read:((<>)0) ~write:(fun b -> compare b false) int
+  view ~read:((<>)0) ~write:(fun b -> Stdlib.compare b false) int
 
 module Init = struct
   type t = Unsigned.uint32
